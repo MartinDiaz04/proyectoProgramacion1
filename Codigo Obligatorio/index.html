@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Censos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/clases.js"></script>
+    <script src="js/codigo.js"></script>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="cabezal" class="clearfix">
+          <img id="logo" src="https://p1.develotion.com/2023_03/logo.jpg" alt="logo">
+          <ul id="navPrincipal">
+            <li id="mnuCensarPersona"> 
+              <a>Realizar Censo</a>
+            </li>
+            <li id="mnuValidarCenso">
+              <a>Validar Censo</a>
+            </li>
+            <li id="mnuReasignarCensista">
+              <a>Reasignar Censista</a>
+            </li>
+            <li id="mostrarTablaCensista">
+              <a>Ver Estadisticas</a>
+            </li>
+            <li id="cerrarSesion">
+              <a>Cerrar Sesion</a>
+            </li>
+          </ul>
+
+          <!-- NAVEGACION PRINCIPAL INVITADO -->
+          <ul id="navPrincipalInvitado">
+            <li id="cerrarSesionInvitado"> 
+              <a>Volver Al Inicio</a>
+            </li>
+            <li id="mostrarTablaInvitado"> 
+              <a>Ver Estadisticas</a>
+            </li>
+          </ul>
+          
+          <!-- VOLVER AL INICIO CENSISTA SIN LOGUEAR -->
+          <ul id="navPrincipalCensistaSinLoguear">
+            <li id="volverAlInicio">
+              <a>Volver Al Inicio</a>
+            </li>
+          </ul>
+
+
+
+
+
+        </div><!-- FIN CABEZAL -->
+
+
+        <!-- INICIO DE LA PAGINA -->
+        <div id="inicio">
+          <h3>Con que perfil quiere ingresar</h3>
+          <input type="button" id="btnCensistaInicio" value="Censista">
+          <input type="button" id="btnInvitadoInicio" value="Invitado">
+        </div>
+
+        <!-- BOTONES PARA REGISTRARSE O INICAR SESION CENSISTA -->
+        <div id="mnuCensistaInicio">
+          <input type="button" id="btnMnuRegCen" value="Registrarse">
+          <input type="button" id="btnMnuLoginCen" value="Iniciar Sesion">
+          <p id="mensajesMnuCensista"></p>
+        </div>
+
+        <!-- INGRESAR CEDULA INVITADO -->
+        <div id="mnuInvitado">
+          <label for="txtCedInvitado">Ingresa Cedula: </label>
+          <input type="text" id="txtCedInvitado"><br>
+          <input type="button" value="Buscar Cedula" id="btnCedInvitado">
+          <p id="mensajeBuscarCedulaInvitado"></p>
+        </div>
+
+
+        <!-- MENU PARA REGISTRARSE EL CENSISTA -->
+          <div id="mnuRegCensista">
+            <h3>Registrarse</h3>
+            <label for="txtNombreRegCen">Ingresar Nombre:</label>
+            <input type="text" id="txtNombreRegCen"><br>
+            <label for="txtNombreUsuRegCen">Ingresar Nombre de Usuario:</label>
+            <input type="text" id="txtNombreUsuRegCen"><br>
+            <label for="txtClaveRegCen">Ingresar Contraseña:</label>
+            <input type="password" id="txtClaveRegCen"><br>
+            <input type="button" id="btnRegCen" value="Registrarse">
+            <p id="mensajeRegistro"></p>
+          </div>
+
+          <!-- MENU PARA INICAR SESION EL CENSISTA -->
+          <div id="mnuLoginCensista">
+            <h3>Iniciar Sesion</h3>
+            <label for="txtNombreUsuLoginCen">Ingresar Nombre de Usuario:</label>
+            <input type="text" id="txtNombreUsuLoginCen"><br>
+            <label for="txtClaveLoginCen">Ingresar Contraseña:</label>
+            <input type="password" id="txtClaveLoginCen"><br>
+            <input type="button" id="btnLoginCen" value="Iniciar Sesion">
+            <p id="mensajeLogin"></p>
+          </div>
+
+
+          <!-- MENU PARA INGRESAR DATOS PARA CENSAR -->
+          <div id="formCensarPersona">
+            <h3>Censar Persona</h3>
+            <label for="txtNombreACensar">Nombre y Apellido: </label>
+            <input type="text" id="txtNombreACensar"><br>
+            <label for="txtEdadACensar">Edad: </label>
+            <input type="number" id="txtEdadACensar"><br>
+            <label for="txtCedACensar">Cedula: </label>
+            <input type="text" id="txtCedACensar"><br>
+            <label for="depACensar">Departamento: </label>
+            <select id="depACensar">
+
+            </select><br>
+            <label for="ocupACensar">Ocupacion: </label>
+            <select id="ocupACensar">
+
+            </select><br>
+            <input type="button" value="Censar" id="btnCensarPersona">
+            <p id="mensajeCensarPersona"></p>
+          </div>
+
+          <!-- MENU INGRESAR CEDULA A VALIDAR -->
+          <div id="cedulaValidar">
+            <label for="numCedulaAValidar">Ingrese la cedula: </label>
+            <input type="text" id="numCedulaAValidar">
+            <input type="button" id="btnBuscarCedulaValidar" value="Buscar">
+            <p id="mensajeCedulaAvalidar"></p>
+          </div>
+
+          <!-- MENU VALIDAR CENSO -->
+          <div id="validarCenso">
+            <h3>Validar Censo</h3>
+            <label for="txtNombreAValidar">Nombre y Apellido: </label>
+            <input type="text" id="txtNombreAValidar"><br>
+            <label for="txtEdadAValidar">Edad: </label>
+            <input type="number" id="txtEdadAValidar"><br>
+            <label for="txtCedAValidar">Cedula: </label>
+            <input type="text" id="txtCedAValidar"><br>
+            <label for="depAValidar">Departamento: </label>
+            <select id="depAValidar">
+
+            </select><br>
+            <label for="ocupAValidar">Ocupacion: </label>
+            <select id="ocupAValidar">
+
+            </select><br>
+            <input type="button" value="Validar Censo" id="btnValidarPersona">
+            <p id="mensajeValidarPersona"></p>
+          </div>
+
+
+          <!-- MENU REASIGNAR CENSISTA -->
+          <div id="reasignarCensista">
+            <p id="avisarUsuarioLogueado"></p>
+            <label for="listaReasignarCensista">Lista de Censistas: </label>
+            <select id="listaReasignarCensista"></select>
+            <label for="listaReasignarInvitados">Cedula de Invitados: </label>
+            <select id="listaReasignarInvitados"></select><br>
+            <input type="button" value="Reasignar Censista" id="btnReasignarCensista">
+            <p id="mensajeReasignarCensista"></p>
+          </div>
+
+
+          <!-- MENU PRECARGAR CENSO -->
+          <div id="mnuPrecargarCenso">
+            <h3>PrecargarCenso Censo</h3>
+            <label for="txtNombrePrecarga">Nombre y Apellido: </label>
+            <input type="text" id="txtNombrePrecarga"><br>
+            <label for="txtEdadPrecarga">Edad: </label>
+            <input type="number" id="txtEdadPrecarga"><br>
+            <label for="txtCedPrecarga">Cedula: </label>
+            <input type="text" id="txtCedPrecarga"><br>
+            <label for="depPrecarga">Departamento: </label>
+            <select id="depPrecarga">
+
+            </select><br>
+            <label for="ocupPrecarga">Ocupacion: </label>
+            <select id="ocupPrecarga">
+
+            </select><br>
+            <input type="button" value="PreCargar Censo" id="btnPreCargarCenso">
+            <input type="button" value="Modificar Censo" id="btnModificarCenso">
+            <input type="button" value="Eliminar Censo" id="btnEliminarCenso">
+            <p id="mensajePrecargaCenso"></p>
+          </div>
+
+
+          <!-- MENU ESTADISTICAS CENSISTA -->
+          <div id="estadisticasCensista"> 
+            <p id="cantPersonasCensadas"></p>
+            <div id="cantPerCensadasPorDepartamento">
+
+            </div>
+            <p id="porcentajeNoValidado"></p>
+            <select id="depEstadisticas">
+            </select>
+            <input type="button" value="Mostrar" id="btnMostrarMayoresYMenores">
+            <p id="porcentajesMayMen"></p>
+          </div>
+
+          <!-- MENU ESTADISTICAS INVITADO -->
+          <div id="estadisticasInvitado">
+              
+          </div>
+
+
+
+          
+            <!--FIN ELEMENTOS-->
+          </div><!-- FIN CONTENIDO -->
+          <div id="pie">
+            <a href="https://www.ort.edu.uy">Obligatorio</a>
+          </div><!-- FIN PIE -->
+        </div><!-- FIN CONTENEDOR -->
+</body>
+</html>
